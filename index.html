@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Consultoría y Dirección de Proyectos en ingeniería de agua, saneamiento y drenaje urbano. Optimización y automatización de procesos, asesoramiento técnico especializado.">
+    <title>Ingeniería y Soluciones</title>
+    <!-- Carga de Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuración de Tailwind para usar la fuente Inter -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Colores personalizados de Tailwind (basados en el JSON) */
+        :root {
+            --color-primary: #163e81;
+            --color-secondary: #007BFF;
+            --color-accent: #00CFFF;
+            --color-text-light: #F8F9FA;
+            --color-text-dark: #343A40;
+            --color-background-light: #FFFFFF;
+            --color-background-dark: #E9ECEF;
+            --color-border: #CED4DA;
+        }
+        .bg-primary { background-color: var(--color-primary); }
+        .text-primary { color: var(--color-primary); }
+        .bg-secondary { background-color: var(--color-secondary); }
+        .text-secondary { color: var(--color-secondary); }
+        .bg-accent { background-color: var(--color-accent); }
+        .text-accent { color: var(--color-accent); }
+        .text-light { color: var(--color-text-light); }
+        .text-dark { color: var(--color-text-dark); }
+        .bg-background-light { background-color: var(--color-background-light); }
+        .bg-background-dark { background-color: var(--color-background-dark); }
+        .border-color { border-color: var(--color-border); }
+
+        /* Estilos para el menú móvil */
+        .mobile-menu {
+            display: none;
+        }
+        .mobile-menu.active {
+            display: flex;
+        }
+    </style>
+</head>
+<body class="bg-background-light text-dark">
+
+    <!-- Header -->
+    <header class="bg-primary text-light p-4 shadow-md fixed w-full z-10">
+        <nav class="container mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="text-2xl font-bold text-light">
+                <img src="Logo Ingellenza.png" alt="Logo de Ingellenza" class="h-10 md:h-14 w-auto rounded-md">
+            </a>
+
+                       <!-- Navegación de escritorio -->
+           <ul class="hidden md:flex space-x-8">
+                <li><a href="#inicio" class="
+                    px-3 py-2 rounded-md border border-transparent text-light
+                    hover:border-white hover:text-white hover:shadow-lg hover:-translate-y-1
+                    transition-all duration-300 transform
+                ">Inicio</a></li>
+                <li><a href="#nosotros" class="
+                    px-3 py-2 rounded-md border border-transparent text-light
+                    hover:border-white hover:text-white hover:shadow-lg hover:-translate-y-1
+                    transition-all duration-300 transform
+                ">Nosotros</a></li>
+                <li><a href="#servicios" class="
+                    px-3 py-2 rounded-md border border-transparent text-light
+                    hover:border-white hover:text-white hover:shadow-lg hover:-translate-y-1
+                    transition-all duration-300 transform
+                ">Servicios</a></li>
+                <li><a href="#contacto" class="
+                    px-3 py-2 rounded-md border border-transparent text-light
+                    hover:border-white hover:text-white hover:shadow-lg hover:-translate-y-1
+                    transition-all duration-300 transform
+                ">Contacto</a></li>
+            </ul>
+
+            <!-- Botón de menú móvil -->
+            <button id="mobile-menu-button" class="
+                md:hidden text-light focus:outline-none
+                px-3 py-2 rounded-md border border-transparent
+                hover:border-white hover:text-white
+                transition-all duration-300
+            ">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Menú móvil (oculto por defecto) -->
+        <div id="mobile-menu" class="mobile-menu flex-col md:hidden bg-primary w-full absolute top-16 left-0 pb-4 shadow-lg">
+            <a href="#inicio" class="block py-2 px-4 text-light hover:bg-secondary transition-colors duration-300">Inicio</a>
+            <a href="#nosotros" class="block py-2 px-4 text-light hover:bg-secondary transition-colors duration-300">Nosotros</a>
+            <a href="#servicios" class="block py-2 px-4 text-light hover:bg-secondary transition-colors duration-300">Servicios</a>
+            <a href="#contacto" class="block py-2 px-4 text-light hover:bg-secondary transition-colors duration-300">Contacto</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <!-- MODIFICACIÓN AQUÍ: Añadir imagen de fondo a la sección de inicio -->
+    <section id="inicio" class="relative text-light min-h-screen flex items-center justify-center text-center pt-16
+                                bg-cover bg-center bg-no-repeat bg-fixed"
+             style="background-image: url('PtaSM.jpg');"> <!-- ¡Ruta de la imagen de fondo aquí! -->
+        <!-- Capa de superposición para mejorar la legibilidad del texto sobre la imagen -->
+        <div class="absolute inset-0 bg-primary opacity-30"></div>
+        <div class="container mx-auto px-4 py-24 relative z-10">
+            <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
+                <br class="md:hidden">Ingeniería para el Futuro
+            </h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto">
+                Soluciones innovadoras y eficientes para tus proyectos de ingeniería y desarrollo.
+            </p>
+            <a href="#contacto" class="bg-accent text-light py-3 px-8 rounded-lg font-semibold text-lg hover:bg-secondary transition-colors duration-300 shadow-md">
+                Contáctanos
+            </a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="nosotros" class="bg-background-light py-24">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-dark">Sobre Nosotros</h2>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <!-- Placeholder de imagen -->
+                    <img src="https://placehold.co/600x400/E0E0E0/333333?text=Nuestra+Empresa" alt="Imagen de Nuestra Empresa" class="rounded-xl shadow-lg w-full h-auto">
+                </div>
+                <div class="md:w-1/2 text-lg leading-relaxed">
+                    <p class="mb-6">
+                        En Ingellenza, nos dedicamos a transformar ideas en realidades tangibles. Con un equipo de ingenieros y especialistas altamente calificados, ofrecemos soluciones integrales que abarcan desde el diseño conceptual hasta la implementación y el mantenimiento.
+                    </p>
+                    <p class="mb-6">
+                        Nuestra misión es superar las expectativas de nuestros clientes, brindando servicios de la más alta calidad, con un enfoque en la innovación, la eficiencia y la sostenibilidad. Creemos en la ingeniería como motor de progreso.
+                    </p>
+                    <p>
+                        Nos enorgullece nuestra trayectoria de éxito y el impacto positivo que generamos en cada proyecto. Tu visión es nuestro desafío, y nuestra experiencia es tu garantía.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="bg-background-dark py-24">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-dark">Nuestros Servicios</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Servicio 1 -->
+                <div class="bg-background-light p-8 rounded-xl shadow-md text-center hover:scale-105 transition-transform duration-300">
+                    <div class="text-secondary mb-4">
+                        <!-- Icono de engranaje (ejemplo) -->
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37a1.724 1.724 0 002.572-1.065z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-dark">Diseño y Planificación</h3>
+                    <p class="text-lg text-dark">
+                        Desarrollamos proyectos desde la fase conceptual, asegurando una planificación robusta y eficiente.
+                    </p>
+                </div>
+                <!-- Servicio 2 -->
+                <div class="bg-background-light p-8 rounded-xl shadow-md text-center hover:scale-105 transition-transform duration-300">
+                    <div class="text-secondary mb-4">
+                        <!-- Icono de construcción (ejemplo) -->
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2H7a2 2 0 00-2 2v2m7-7h.01M7 16h.01"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-dark">Gestión de Proyectos</h3>
+                    <p class="text-lg text-dark">
+                        Supervisión y ejecución de obras con los más altos estándares de calidad y seguridad.
+                    </p>
+                </div>
+                <!-- Servicio 3 -->
+                <div class="bg-background-light p-8 rounded-xl shadow-md text-center hover:scale-105 transition-transform duration-300">
+                    <div class="text-secondary mb-4">
+                        <!-- Icono de análisis (ejemplo) -->
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-dark">Consultoría Técnica</h3>
+                    <p class="text-lg text-dark">
+                        Asesoramiento experto para optimizar tus procesos y tomar decisiones estratégicas.
+                    </p>
+                </div>
+                <!-- Servicio 4 -->
+                <div class="bg-background-light p-8 rounded-xl shadow-md text-center hover:scale-105 transition-transform duration-300">
+                    <div class="text-secondary mb-4">
+                        <!-- Icono de tecnología (ejemplo) -->
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1l-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-dark">Automatización Industrial</h3>
+                    <p class="text-lg text-dark">
+                        Implementación de sistemas automatizados para mejorar la productividad y reducir costos.
+                    </p>
+                </div>
+                <!-- Servicio 5 -->
+                <div class="bg-background-light p-8 rounded-xl shadow-md text-center hover:scale-105 transition-transform duration-300">
+                    <div class="text-secondary mb-4">
+                        <!-- Icono de energía (ejemplo) -->
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-dark">Energías Renovables</h3>
+                    <p class="text-lg text-dark">
+                        Desarrollo e instalación de soluciones energéticas sostenibles y eficientes.
+                    </p>
+                </div>
+                <!-- Servicio 6 -->
+                <div class="bg-background-light p-8 rounded-xl shadow-md text-center hover:scale-105 transition-transform duration-300">
+                    <div class="text-secondary mb-4">
+                        <!-- Icono de mantenimiento (ejemplo) -->
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-dark">Mantenimiento y Soporte</h3>
+                    <p class="text-lg text-dark">
+                        Servicios de mantenimiento preventivo y correctivo para garantizar la continuidad operativa.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="bg-background-light py-24">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-dark">Contáctanos</h2>
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2">
+                    <form class="bg-background-dark p-8 rounded-xl shadow-md">
+                        <div class="mb-6">
+                            <label for="name" class="block text-dark text-lg font-semibold mb-2">Nombre Completo</label>
+                            <input type="text" id="name" name="name" class="w-full p-3 rounded-md border border-color focus:outline-none focus:border-secondary transition-colors duration-300" placeholder="Tu nombre">
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block text-dark text-lg font-semibold mb-2">Correo Electrónico</label>
+                            <input type="email" id="email" name="email" class="w-full p-3 rounded-md border border-color focus:outline-none focus:border-secondary transition-colors duration-300" placeholder="tu@ejemplo.com">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-dark text-lg font-semibold mb-2">Mensaje</label>
+                            <textarea id="message" name="message" rows="5" class="w-full p-3 rounded-md border border-color focus:outline-none focus:border-secondary transition-colors duration-300" placeholder="Escribe tu mensaje aquí..."></textarea>
+                        </div>
+                        <button type="submit" class="bg-accent text-light py-3 px-8 rounded-lg font-semibold text-lg hover:bg-secondary transition-colors duration-300 shadow-md w-full">
+                            Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-background-dark p-8 rounded-xl shadow-md h-full flex flex-col justify-center">
+                        <h3 class="text-2xl font-semibold mb-4 text-dark">Información de Contacto</h3>
+                        <p class="mb-4 text-lg">
+                            <strong class="text-secondary">Dirección:</strong> Calle Falsa 123, Ciudad, País
+                        </p>
+                        <p class="mb-4 text-lg">
+                            <strong class="text-secondary">Teléfono:</strong> +123 456 7890
+                        </p>
+                        <p class="mb-6 text-lg">
+                            <strong class="text-secondary">Email:</strong> info@ingellenza.com
+                        </p>
+                        <!-- Placeholder de mapa -->
+                        <div class="w-full h-64 bg-gray-300 rounded-md flex items-center justify-center text-gray-600 text-center text-xl">
+                            [Mapa de Ubicación]
+                            <img src="https://placehold.co/600x400/E0E0E0/333333?text=Mapa+de+Ubicación" alt="Mapa de Ubicación" class="rounded-xl shadow-lg w-full h-auto">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-light py-8 text-center">
+        <div class="container mx-auto px-4">
+            <p>&copy; 2025 Ingellenza. Todos los derechos reservados.</p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <a href="#" class="hover:text-accent transition-colors duration-300">Facebook</a>
+                <a href="#" class="hover:text-accent transition-colors duration-300">LinkedIn</a>
+                <a href="#" class="hover:text-accent transition-colors duration-300">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript para el menú móvil -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('active');
+            });
+
+            // Cerrar el menú móvil al hacer clic en un enlace
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.remove('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
