@@ -6,6 +6,7 @@
     <title>PERAPGO | Ingeniería, Inspección y Gestión de Proyectos</title> 
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        section[id] { scroll-margin-top: 40px; }
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
         body {
             font-family: 'Inter', sans-serif;
@@ -44,38 +45,59 @@
         /* --- Estilos para el Carrusel de Logos (Marquee) --- */
         .marquee-container {
             overflow: hidden;
-            white-space: nowrap;
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Centrado vertical */
+            /*white-space: nowrap;*/
         }
         .marquee-content {
-            display: inline-block;
-            animation: scroll-left 25s linear infinite; 
-            padding-left: 100%; 
+            display: flex; /* CAMBIO: Usamos flex para centrar */
+            justify-content: center; /* NUEVO: Centra horizontalmente los logos */
+            align-items: center; /* NUEVO: Centra verticalmente los logos (si hay diferencia de altura) */
+            white-space: nowrap;
+            animation: fade-logos 10s ease-in-out infinite;
+            width: 100%;
+            /*display: inline-block;
+            animation: scroll-left 10s linear infinite; 
+            padding-left: 100%;*/ 
         }
         .logo-item {
             display: inline-block;
-            margin: 0 3rem; 
-            width: 150px; 
-            height: 50px; 
-            filter: grayscale(100%);
-            opacity: 0.6;
-            transition: filter 0.3s, opacity 0.3s;
+            margin: 0 0.30rem; 
+            width: 500px; 
+            height: 150px; 
+            object-fit: contain;
+            /*filter: grayscale(100%);*/
+            /*opacity: 0.6;*/
+            /*transition: filter 0.3s, opacity 0.3s;*/
         }
         .logo-item:hover {
             filter: grayscale(0%); 
             opacity: 1;
         }
         
+        /* Definición de la animación de pulso (opacidad) */
+        @keyframes pulso-logo {
+        /* 0% a 90%: Opacidad completa (se queda fijo por 9 segundos) */
+            0% { opacity: 1; }
+            90% { opacity: 1; }
+            
+        /* 91% a 100%: Opacidad cae y vuelve a subir (simula un reinicio rápido) */
+            91% { opacity: 0; }
+            100% { opacity: 1; }
+        }    
         /* Define la animación de desplazamiento */
-        @keyframes scroll-left {
+        /*@keyframes scroll-left {
             0% { transform: translate3d(0, 0, 0); }
             100% { transform: translate3d(-50%, 0, 0); } 
         }
         .marquee-content > * {
             display: inline-block;
-        }
+        }*/
     </style>
+    
 </head>
-<body class="bg-background-light text-dark">
+    <body class="bg-background-light text-dark">
 
     <header class="bg-primary text-light p-4 shadow-md fixed w-full z-10">
         <nav class="container mx-auto flex justify-between items-center">
@@ -105,7 +127,7 @@
                     transition-all duration-300 transform
                 ">Contacto</a></li>
             </ul>
-
+        
             <button id="mobile-menu-button" class="
                 md:hidden text-light focus:outline-none
                 px-3 py-2 rounded-md border border-transparent
@@ -128,10 +150,10 @@
 
     <section id="inicio" class="relative text-light min-h-screen flex items-center justify-center text-center pt-16
                                  bg-cover bg-center bg-no-repeat bg-fixed"
-             style="background-image: url('img/saneamiento-principal.jpg');"> <div class="absolute inset-0 bg-primary opacity-30"></div>
+             style="background-image: url('logos/img_principal.jpeg');"> <div class="absolute inset-0 bg-primary opacity-30"></div>
         <div class="container mx-auto px-4 py-24 relative z-10">
             <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
-                <br class="md:hidden">Gestión Experta en Obras de Infraestructura
+                <br class="md:hidden">Gestión en Obras de Infraestructura
             </h1>
             <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto">
                 Lideramos tus proyectos de ingeniería civil, vial y de servicios con eficiencia, innovación y seguridad.
@@ -145,7 +167,7 @@
     <section id="clientes" class="py-12 bg-background-dark border-y border-color">
         <div class="container mx-auto px-4 text-center">
             <h3 class="text-xl font-semibold uppercase tracking-wider text-dark mb-8">
-                Empresas que confían en **PERAPGO**
+                Las empresas que confían en PERAPGO SA
             </h3>
         </div>
         <div class="marquee-container">
@@ -155,13 +177,14 @@
                 <img src="logos/grupopose_logo.jpg" alt="Logo Cliente 3" class="logo-item">
                 <img src="logos/logo-fp-negro.png" alt="Logo Cliente 4" class="logo-item">
                 <img src="logos/Vizora.jpg" alt="Logo Cliente 5" class="logo-item">
-
+                <img src="logos/logo_CIS.jpeg" alt="Logo Cliente 6" class="logo-item">    
 
                 <img src="logos/cyeconstrucciones_logo.jpg" alt="Logo Cliente 1" class="logo-item">
                 <img src="logos/estudiojaraj_logo.jpg" alt="Logo Cliente 2" class="logo-item">
                 <img src="logos/grupopose_logo.jpg" alt="Logo Cliente 3" class="logo-item">
                 <img src="logos/logo-fp-negro.png" alt="Logo Cliente 4" class="logo-item">
                 <img src="logos/Vizora.jpg" alt="Logo Cliente 5" class="logo-item">
+                <img src="logos/logo_CIS.jpeg" alt="Logo Cliente 6" class="logo-item">
             </div>
         </div>
     </section>
@@ -171,11 +194,11 @@
             <h2 class="text-4xl font-bold text-center mb-12 text-dark">Sobre Nosotros</h2>
             <div class="flex flex-col md:flex-row items-center gap-12">
                 <div class="md:w-1/2">
-                    <img src="img/equipo-planos.jpg" alt="Equipo de Perapgo mirando planos" class="rounded-xl shadow-lg w-full h-auto">
+                    <img src="logos/img_plano.jpeg" alt="Equipo de Perapgo mirando planos" class="rounded-xl shadow-lg w-full h-auto">
                 </div>
                 <div class="md:w-1/2 text-lg leading-relaxed">
                     <p class="mb-6">
-                        En **PERAPGO** somos especialistas en la **Gestión, Inspección y Dirección de Proyectos** de ingeniería de alta complejidad. Nuestro metier abarca integralmente el sector de **obras civiles, proyectos viales y de infraestructura de servicios**.
+                        Somos especialistas en la Gestión, Inspección y Dirección de Proyectos de ingeniería de alta complejidad. Nuestro metier abarca integralmente el sector de obras civiles, proyectos viales y de infraestructura de servicios.
                     </p>
                     <p class="mb-6">
                         Nuestro equipo multidisciplinario ofrece soluciones eficientes y robustas para cada etapa del proyecto. Nos enfocamos en la optimización de procesos y el asesoramiento técnico especializado para garantizar la excelencia en la ejecución.
@@ -298,8 +321,8 @@
                         <p class="mb-6 text-lg">
                             <strong class="text-secondary">Email:</strong> contacto@perapgo.com
                         </p>
-                        <div class="w-full h-64 bg-gray-300 rounded-md flex items-center justify-center text-gray-600 text-center text-xl">
-                            <img src="img/mapa-caba.jpg" alt="Mapa de Ubicación en México 1672, CABA" class="rounded-xl shadow-lg w-full h-auto">
+                        <div class="w-3/4 mx-auto h-64 bg-gray-300 rounded-md flex items-center justify-center text-gray-600 text-center text-xl">
+                            <img src="logos/mapa_mexico1672.png" alt="Mapa de Ubicación en México 1672, CABA" class="rounded-md shadow-lg w-full h-full object-cover">
                         </div>
                     </div>
                 </div>
